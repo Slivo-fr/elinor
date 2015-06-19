@@ -1,0 +1,1 @@
+Semi-automatic margin calculator and order adjusting helper
