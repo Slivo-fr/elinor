@@ -10,8 +10,9 @@ namespace Elinor
         internal static void SetClipboardWrapper(double d)
         {
             bool copied = false;
+            int Attempts = 0;
 
-            while (copied == false)
+            while (copied == false && Attempts < 3)
             {
                 try
                 {
@@ -20,7 +21,8 @@ namespace Elinor
                 }
                 catch (Exception)
                 {
-                    Thread.Sleep(1000);
+                    Attempts++;
+                    Thread.Sleep(500 * Attempts);
                 }
             }
         }
